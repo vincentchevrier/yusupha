@@ -47,13 +47,13 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function startAutoPlay() {
+        clearInterval(autoPlayInterval);
         if (isAutoPlaying) {
-            autoPlayInterval = setInterval(nextSlide, 5000);
+            autoPlayInterval = setInterval(nextSlide, 2500);
         }
     }
 
     function resetAutoPlay() {
-        clearInterval(autoPlayInterval);
         startAutoPlay();
     }
 

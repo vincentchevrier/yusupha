@@ -550,6 +550,21 @@ a {
     text-align: center;
 }
 
+.footer-vignette {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 1rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--color-earth-tan);
+}
+
+.footer-vignette img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .footer p {
     color: var(--color-earth-tan);
     font-size: 0.9rem;
