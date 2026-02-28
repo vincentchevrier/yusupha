@@ -210,6 +210,86 @@ a {
     color: var(--color-text-light);
 }
 
+/* Destinations Accordion */
+.destinations-accordion {
+    max-width: 700px;
+    margin: 2rem auto 0;
+    background: var(--color-earth-cream);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.destinations-accordion summary {
+    padding: 1rem 1.5rem;
+    font-weight: 600;
+    color: var(--color-earth-dark);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: var(--transition);
+}
+
+.destinations-accordion summary:hover {
+    background: var(--color-earth-sand);
+    color: var(--color-white);
+}
+
+.destinations-accordion summary::marker {
+    content: '';
+}
+
+.destinations-accordion summary::after {
+    content: '+';
+    font-size: 1.25rem;
+    font-weight: 400;
+    transition: var(--transition);
+}
+
+.destinations-accordion[open] summary::after {
+    content: '−';
+}
+
+.destinations-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 1.5rem;
+    background: var(--color-white);
+    border-top: 1px solid var(--color-earth-sand);
+}
+
+.destinations-column h4 {
+    font-family: var(--font-heading);
+    color: var(--color-forest-green);
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+}
+
+.destinations-column ul {
+    list-style: none;
+    text-align: left;
+}
+
+.destinations-column li {
+    padding: 0.35rem 0;
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+    border-bottom: 1px solid var(--color-earth-cream);
+}
+
+.destinations-column li:last-child {
+    border-bottom: none;
+}
+
+@media (max-width: 600px) {
+    .destinations-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
 .client-photo {
     max-width: 600px;
     margin: 0 auto;
@@ -314,10 +394,20 @@ a {
     position: relative;
 }
 
+.carousel-slide a {
+    display: block;
+    cursor: pointer;
+}
+
 .carousel-slide img {
     width: 100%;
     aspect-ratio: 4/3;
     object-fit: cover;
+    transition: var(--transition);
+}
+
+.carousel-slide a:hover img {
+    opacity: 0.9;
 }
 
 .slide-caption {

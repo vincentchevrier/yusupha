@@ -1,7 +1,7 @@
-# Yusupha Jammeh Birdwatching Services Website
+# Yuspha Jammeh Birdwatching Services Website
 
 ## Project Overview
-A single-page static website advertising professional birdwatching guide services in The Gambia. The site showcases Yusupha Jammeh's 20 years of experience and features his bird photography in an interactive carousel.
+A single-page static website advertising professional birdwatching guide services in The Gambia. The site showcases Yuspha Jammeh's 20 years of experience and features his bird photography in an interactive carousel.
 
 ## Tech Stack
 - HTML5
@@ -42,7 +42,7 @@ yusupha/
 ### 2. About & Services Section
 - 20 years of experience highlight
 - Description of The Gambia as a birdwatching destination
-- Photo of Yusupha with a client on tour
+- Photo of Yuspha with a client on tour
 - Four service cards:
   - Guided Bird Tours (full-day/half-day)
   - Photography Tours
