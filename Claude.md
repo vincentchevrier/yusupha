@@ -1,13 +1,16 @@
 # Yusupha Jammeh Birdwatching Services Website
 
 ## Project Overview
-A single-page static website advertising professional birdwatching guide services in The Gambia. The site showcases Yusupha Jammeh's 20 years of experience and features his bird photography in an interactive carousel.
+A single-page static website advertising professional birdwatching guide services in The Gambia and Senegal. The site showcases Yusupha Jammeh's 20 years of experience and features his bird photography in an interactive carousel.
+
+**Live site:** [gambiabirdwatch.com](https://gambiabirdwatch.com)
 
 ## Tech Stack
 - HTML5
 - CSS3 (vanilla, no frameworks)
 - JavaScript (vanilla, no dependencies)
-- Python `rembg` library (for image processing)
+- ImageMagick (for image resizing)
+- Python `rembg` library (for background removal)
 
 ## File Structure
 ```
@@ -15,20 +18,24 @@ yusupha/
 ├── index.html          # Main HTML structure
 ├── styles.css          # All styling (earthy, minimalist theme)
 ├── script.js           # Carousel and smooth scrolling functionality
+├── CNAME               # Custom domain for GitHub Pages
 ├── images/
-│   ├── birds/          # Bird photography (8 images)
-│   │   ├── Bearded Barbet.jpg
-│   │   ├── Blue-breasted Kingfisher.jpg
-│   │   ├── Bronze-tailed Glossy Starling.jpg
-│   │   ├── Brown Snake Eagle.jpg
-│   │   ├── Bruces Green Pigeon.jpg
-│   │   ├── Purple Glossy Starling.jpg
-│   │   ├── Wolly-necked Stork.jpg
-│   │   └── Yellow-billed  Stirk.jpg
-│   └── people/
-│       ├── yusupha.jpg              # Original photo
-│       ├── yusupha-nobg.png         # Background removed, cropped
-│       └── yusupha_with_client.jpg  # Tour photo
+│   ├── birds/          # Bird photography (29 images)
+│   │   ├── thumb/      # Resized images for carousel (1200px wide)
+│   │   ├── African Golden Oriole.jpg
+│   │   ├── African River Eagle.jpg
+│   │   ├── ... (29 species total)
+│   │   └── oriole-vignette.jpg  # Footer vignette
+│   ├── unused/         # Original 8 carousel images (archived)
+│   ├── people/
+│   │   ├── yusupha.jpg              # Original photo
+│   │   ├── yusupha-nobg.png         # Background removed, cropped
+│   │   └── yusupha_with_client.jpg  # Tour photo
+│   ├── favicon.ico
+│   ├── favicon-16.png
+│   ├── favicon-32.png
+│   ├── apple-touch-icon.png
+│   └── bird-icon.svg   # Favicon source (raven icon)
 ```
 
 ## Site Sections
@@ -42,6 +49,10 @@ yusupha/
 ### 2. About & Services Section
 - 20 years of experience highlight
 - Description of The Gambia as a birdwatching destination
+- Note that tours to Senegal are also available
+- Expandable tour destinations accordion with 21 locations:
+  - **The Gambia (15):** Kotu Creeks, Bijilo Forest Park, Brufut Woods, Abuko Nature Reserve, Tanji Bird Reserve, Marakisa Woods, Farasutu Community Forest, Pirang Forest, Kartong Bird Observatory, Tendaba Camp, Kiang West National Park, Morgan Kunda Woods, Janjanbureh River Excursion, Bansang Quarry, Basse Woods
+  - **Senegal (6):** Wassudu Camp, Dindifelo Waterfall, Toubacouta Creeks, Njafate Semi-desert, Djoudj National Park, Podor Semi-desert
 - Photo of Yusupha with a client on tour
 - Four service cards:
   - Guided Bird Tours (full-day/half-day)
@@ -50,10 +61,11 @@ yusupha/
   - Bird Identification
 
 ### 3. Bird Gallery
-- Interactive carousel with all 8 bird photos
+- Interactive carousel with 29 bird photos
+- Thumbnail images load for performance, click for full resolution
 - Text notes photos were taken on tours
 - Features:
-  - Auto-advancement (5 second interval)
+  - Auto-advancement (2.5 second interval)
   - Manual navigation (prev/next buttons)
   - Dot indicators
   - Touch swipe support for mobile
@@ -61,16 +73,14 @@ yusupha/
   - Pause on hover
 
 ### 4. Contact Section
-- WhatsApp (click-to-chat link)
-- Email (mailto link)
-- Instagram
-- Facebook
+- WhatsApp: [+220 770 6348](https://wa.me/2207706348)
+- Email: yuspha_jammeh704@yahoo.com
+- Instagram: [@yuspha.jammeh.9](https://www.instagram.com/yuspha.jammeh.9)
+- Facebook: [yuspha.jammeh.9](https://www.facebook.com/yuspha.jammeh.9)
 
-**Note:** Contact details are placeholders - update in `index.html`:
-- WhatsApp: `https://wa.me/220XXXXXXX`
-- Email: `your.email@example.com`
-- Instagram: `https://instagram.com/yourprofile`
-- Facebook: `https://facebook.com/yourprofile`
+### 5. Footer
+- African Golden Oriole vignette image
+- Copyright notice
 
 ## Design
 - **Style:** Earthy, minimalist
@@ -83,20 +93,16 @@ yusupha/
   - Forest green: `#4a5d23`
 - **Typography:** Georgia (headings), system fonts (body)
 - **Responsive:** Mobile-first with breakpoints at 600px, 768px, and 1024px
+- **Favicon:** Raven icon with forest green background and white foreground
 
 ## Image Processing
-The hero profile image (`yusupha-nobg.png`) was created by:
-1. Using Python `rembg` library to remove background from `yusupha.jpg`
-2. Cropping to upper 65% (torso)
-3. CSS scales image to 120% for closer crop in circular frame
+- Hero profile image (`yusupha-nobg.png`): Background removed with `rembg`, cropped to upper 65%
+- Carousel thumbnails: Resized to 1200px wide with ImageMagick for fast loading
+- Full resolution images available on click (opens in new tab)
+- Favicon generated from SVG at high density for crisp rendering
 
 ## Deployment
-Ready for GitHub Pages deployment:
-1. Push to GitHub repository
-2. Enable GitHub Pages in repository settings
-3. Select branch to deploy (main/master)
-
-## Future Updates
-- Replace placeholder contact information with real details
-- Add more bird photos to the gallery as needed
-- Consider adding testimonials section
+Deployed on GitHub Pages with custom domain:
+1. Repository: GitHub
+2. Branch: master
+3. Custom domain: gambiabirdwatch.com (configured via CNAME file)
